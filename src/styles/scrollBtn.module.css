@@ -1,0 +1,27 @@
+.scroll-btn-container {
+    width: 60px;
+    height: 60px;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  opacity: 0;
+  transition: all 0.4s ease;
+  cursor: pointer;
+  background-color: #002642;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: whitesmoke;
+  font-size: 30px;
+  box-shadow: 0 0 2px 2px rgba(128, 128, 128, 0.466);
+}
+
+.visible {
+  opacity: 1;
+}
+
+.scroll-btn-container:hover {
+  background-color: whitesmoke;
+  color: #002642;
+}

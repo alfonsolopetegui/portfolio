@@ -3,6 +3,7 @@
     top: 125px;
     right: -300px;
     transition: all ease 0.8s;
+    z-index: 5;
 }
 
 .nav-container nav{
@@ -16,6 +17,7 @@
     background-color: #002642;
     border-radius: 15px 0 0 15px;
     box-shadow: 0 0 2px 2px rgba(245, 245, 245, 0.354);
+    z-index: 5;
 }
 
 .nav-container nav a{
@@ -79,4 +81,10 @@
 
 .icono-right:hover {
     color: whitesmoke;
+}
+
+@media (max-width: 1150px) {
+    .nav-container {
+        top: 215px;
+    }
 }

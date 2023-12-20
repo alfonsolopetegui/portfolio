@@ -78,8 +78,8 @@
 
 .btn-image-up {
   position: absolute;
-  top: 250px;
-  right: 40px;
+  top: 45%;
+  right: 5%;
   cursor: pointer;
   width: 30px;
   font-size: 32px;
@@ -97,8 +97,8 @@
 
 .btn-image-down {
   position: absolute;
-  top: 250px;
-  left: 40px;
+  top: 45%;
+  left: 5%;
   cursor: pointer;
   width: 32px;
   font-size: 32px;
@@ -157,4 +157,49 @@
 
 .page-link:hover {
   color: rgba(63, 137, 197, 0.612);
+}
+
+@media (max-width: 1150px) {
+
+  .project {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+
+  .image-container {
+    width: 80%;
+  }
+
+  .text-container {
+    width: 80%;
+  }
+}
+
+
+@media (max-width: 560px) {
+
+
+  .image-container {
+    width: 95%;
+  }
+
+  .text-container {
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .btn-image-up {
+    top: 38%;
+    width: 20px;
+    height: 20px;
+  }
+
+  .btn-image-down {
+    top: 38%;
+    width: 20px;
+    height: 20px;
+  }
+  
+
 }

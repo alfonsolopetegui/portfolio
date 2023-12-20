@@ -2,7 +2,7 @@
 import styles from "../styles/projects.module.css";
 
 import { Montserrat } from "next/font/google";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 //Font Awesome
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -12,41 +12,38 @@ import {
   faChevronRight,
 } from "@fortawesome/free-solid-svg-icons";
 
+//Firebase
+import firebaseApp from "../../firebase";
+import { getFirestore, collection, getDocs } from "firebase/firestore/lite";
+
+const db = getFirestore(firebaseApp);
+
 const montserrat = Montserrat({ subsets: ["latin"], weight: "400" });
 
-const projectsData = [
-  {
-    name: "Guitarra a la carta",
-    url: ["/guitarra1.png", "/guitarra2.png", "/guitarra3.png"],
-    description:
-      "This was my first project—a landing page developed solely using HTML and CSS.",
-  },
-  {
-    name: "Bar App",
-    url: ["/barcito1.png", "/barcito2.png", "/barcito3.png"],
-    description:
-      "I was commissioned to develop a Bar App using Next.js. The login system and database were implemented using Firebase. The app is designed for easy management of tables and delivery. Additionally, it includes an administrator page for creating and editing products and users.",
-    page: "https://mercadito-react.vercel.app/",
-    user: "User: visitor@gmail.com  Password: visitor123456",
-  },
-  {
-    name: "Central Music",
-    url: ["/central1.png", "/central2.png", "/central3.png"],
-    description:
-      "This was the final project for the Front End course. Developed in Next.js, the project is fully responsive, applying the mobile-first methodology. The design was taken from an existing one in Figma, and the backend was sourced from Jason Placeholder's Apifake.",
-  },
-  {
-    name: "Travel Company",
-    url: ["/viajes1.png", "/viajes2.png", "/viajes3.png"],
-    description:
-      "I undertook this project as a practice exercise, focusing on several aspects. For instance, I worked on implementing a login system, utilizing dynamic routes, and developing a payment platform.",
-  },
-];
+
 
 export const Projects = () => {
   const [viewAll, setViewAll] = useState(true);
   const [selectedProject, setSelectedProject] = useState(null);
   const [selectedImage, setSelectedImage] = useState(0);
+
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    const projectsData = async () => {
+      try {
+        const projects = collection(db, "projects");
+        const projectsSnapshot = await getDocs(projects);
+        const projectsList = projectsSnapshot.docs.map((doc) => doc.data());
+        setData(projectsList);
+        // return projectsList;
+        console.log(projectsList);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    projectsData();
+  }, []);
 
   const handleProject = (project) => {
     setViewAll(false);
@@ -89,23 +86,24 @@ export const Projects = () => {
           className={styles["project-container"]}
           style={montserrat.style}
         >
-          {projectsData.map((project, i) => {
-            return (
-              <article
-                className={styles["project"]}
-                key={i}
-                onClick={() => handleProject(project)}
-              >
-                <img src={project.url[0]}></img>
-                <h4>{project.name}</h4>
-              </article>
-            );
-          })}
+          {data &&
+            data.map((project, i) => {
+              return (
+                <article
+                  className={styles["project"]}
+                  key={i}
+                  onClick={() => handleProject(project)}
+                >
+                  <img src={project.images[0]}></img>
+                  <h4>{project.name}</h4>
+                </article>
+              );
+            })}
         </section>
       ) : (
         <div className={styles["view-container"]}>
           <div className={styles["image-container"]}>
-            <img src={selectedProject.url[selectedImage]}></img>
+            <img src={selectedProject.images[selectedImage]}></img>
             <FontAwesomeIcon
               onClick={handleImageUp}
               icon={faChevronRight}

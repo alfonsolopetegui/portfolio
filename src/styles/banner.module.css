@@ -10,6 +10,7 @@
   height: 550px;
   position: relative;
   box-shadow: 0 0 2px 2px rgba(216, 204, 204, 0.584);
+  overflow-x: hidden;
 }
 
 .title {
@@ -114,11 +115,18 @@
 }
 
 @media (max-width: 560px) {
+
+  .banner-container {
+    height: 800px;
+  }
+
   .title {
+    top: 160px;
     width: 98%;
   }
 
   .download {
+    top: 275px;
     width: 98%;
   }
 }
@@ -133,6 +141,6 @@
   }
 
   .download {
-    top: 140px;
+    top: 250px;
   }
 }

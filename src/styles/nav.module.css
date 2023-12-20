@@ -88,3 +88,9 @@
         top: 215px;
     }
 }
+
+@media (max-width: 560px) {
+    .nav-container {
+        top: 400px;
+    }
+}

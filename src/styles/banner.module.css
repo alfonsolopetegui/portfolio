@@ -40,7 +40,7 @@
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.3s ease, visibility 0.3s ease;
-  width: 600px;
+  width: 50%;
   position: absolute;
   top: 215px;
   background-color: #002642;
@@ -123,8 +123,8 @@
   }
 
   .download {
-    top: 10%;
-    width: 98%;
+    top: 28%;
+    width: 50%;
   }
 }
 
@@ -139,8 +139,8 @@
   }
 
   .download {
-    top: 10%;
-    width: 98%;
+    top: 25%;
+    width: 80%;
   }
 
 }
@@ -157,7 +157,7 @@
   }
 
   .download {
-    top: 10%;
+    top: 25%;
     width: 98%;
   }
 }
@@ -172,6 +172,6 @@
   }
 
   .download {
-    top: 250px;
+    top: 24%;
   }
 }

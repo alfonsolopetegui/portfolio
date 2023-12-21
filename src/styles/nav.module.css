@@ -1,6 +1,6 @@
 .nav-container {
     position: absolute;
-    top: 125px;
+    top: 50%;
     right: -300px;
     transition: all ease 0.8s;
     z-index: 5;
@@ -85,12 +85,18 @@
 
 @media (max-width: 1150px) {
     .nav-container {
-        top: 215px;
+        top: 50%;
     }
 }
 
+@media (max-width: 850px) {
+.nav-container {
+    top: 50%;
+}
+  }
+
 @media (max-width: 560px) {
     .nav-container {
-        top: 400px;
+        top: 50%;
     }
 }

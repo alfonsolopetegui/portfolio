@@ -15,22 +15,31 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 
 const montserrat = Montserrat({ subsets: ["latin"], weight: "400" });
-const inter = Inter({ subsets: ["latin"], weight: "700" })
+const inter = Inter({ subsets: ["latin"], weight: "700" });
 
 export const About = () => {
   return (
-    <div className={styles["about-container"]} style={montserrat.style} id="about">
-      <h1 className={styles["about-title"]} style={inter.style}>About me...</h1>
+    <div
+      className={styles["about-container"]}
+      style={montserrat.style}
+      id="about"
+    >
+      <h1 className={styles["about-title"]} style={inter.style}>
+        About me...
+      </h1>
       <section className={styles["about-resume"]}>
         <article className={styles["hi-there"]}>
           <h3>Hi there! </h3>
           <p>
-            I´m a Front End Developer with around a year of experience in React
-            and Next.I´m a Front End Developer with around a year of experience
-            in React and Next.I´m a Front End Developer with around a year of
-            experience in React and Next.I´m a Front End Developer with around a
-            year of experience in React and Next.I´m a Front End Developer with
-            around a year of experience in React and Next.
+            I am a Front-End Developer with approximately one year of experience
+            in React and Next.js. I have undergone a comprehensive course
+            covering back-end fundamentals, including Express.js and MongoDB,
+            thereby completing proficiency in the MERN stack. I've found the
+            coding world to be incredibly exciting, and I'm always eager to
+            learn new technologies. Currently, I'm studying SQL, strengthening
+            my foundation in Node.js and Express, and exploring various UI
+            libraries. I'm looking forward to taking on new challenges and
+            opportunities to gain more experience.
           </p>
           {/* <h4>Download my CV</h4>
           <div className={styles["btn-container"]}>

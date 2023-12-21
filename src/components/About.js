@@ -31,15 +31,15 @@ export const About = () => {
         <article className={styles["hi-there"]}>
           <h3>Hi there! </h3>
           <p>
-            I am a Front-End Developer with approximately one year of experience
-            in React and Next.js. I have undergone a comprehensive course
-            covering back-end fundamentals, including Express.js and MongoDB,
-            thereby completing proficiency in the MERN stack. I've found the
-            coding world to be incredibly exciting, and I'm always eager to
-            learn new technologies. Currently, I'm studying SQL, strengthening
-            my foundation in Node.js and Express, and exploring various UI
-            libraries. I'm looking forward to taking on new challenges and
-            opportunities to gain more experience.
+            {`I am a Front-End Developer with approximately one year of experience
+  in React and Next.js. I have undergone a comprehensive course
+  covering back-end fundamentals, including Express.js and MongoDB,
+  thereby completing proficiency in the MERN stack. I've found the
+  coding world to be incredibly exciting, and I'm always eager to
+  learn new technologies. Currently, I'm studying SQL, strengthening
+  my foundation in Node.js and Express, and exploring various UI
+  libraries. I'm looking forward to taking on new challenges and
+  opportunities to gain more experience.`}
           </p>
           {/* <h4>Download my CV</h4>
           <div className={styles["btn-container"]}>

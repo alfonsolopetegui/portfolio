@@ -70,7 +70,7 @@ const Contact = () => {
   return (
     <>
       <div className={styles["contact-container"]} id="contact">
-        <h1 className={styles["contact-title"]}>Contact me!!</h1>
+        <h1 className={styles["contact-title"]}>Contact</h1>
         <div className={styles["form-container"]}>
           <form
             className={styles["contact-form"]}

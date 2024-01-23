@@ -2,7 +2,7 @@
 import styles from "../styles/projects.module.css";
 
 import { Montserrat } from "next/font/google";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 //Font Awesome
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -23,6 +23,8 @@ const montserrat = Montserrat({ subsets: ["latin"], weight: "400" });
 
 
 export const Projects = () => {
+  const projectsRef = useRef(null);
+
   const [viewAll, setViewAll] = useState(true);
   const [selectedProject, setSelectedProject] = useState(null);
   const [selectedImage, setSelectedImage] = useState(0);
@@ -48,6 +50,11 @@ export const Projects = () => {
   const handleProject = (project) => {
     setViewAll(false);
     setSelectedProject(project);
+
+    // Desplazarse hacia la sección de proyectos
+    if (projectsRef.current) {
+      projectsRef.current.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   const handleGoBack = () => {
@@ -79,7 +86,7 @@ export const Projects = () => {
   };
 
   return (
-    <div className={styles["projects-container"]} id="projects">
+    <div className={styles["projects-container"]} id="projects" ref={projectsRef}>
       <h1 className={styles["projects-title"]}>Projects</h1>
       {viewAll ? (
         <section

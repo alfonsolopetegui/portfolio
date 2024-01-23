@@ -39,7 +39,7 @@ export const About = () => {
             learn new technologies. Currently, I am studying SQL, strengthening
             my foundation in Node.js and Express, and exploring various UI
             libraries. I am looking forward to taking on new challenges and
-            opportunities to gain more experience.
+            opportunities.
           </p>
           {/* <h4>Download my CV</h4>
           <div className={styles["btn-container"]}>

@@ -4,6 +4,10 @@ import styles from "../styles/banner.module.css";
 import { Nav } from "./Nav";
 import { Montserrat } from "next/font/google";
 
+//Font Awesome
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCircleArrowDown } from "@fortawesome/free-solid-svg-icons";
+
 const montserrat = Montserrat({ subsets: ["latin"], weight: "400" });
 
 export const Banner = () => {
@@ -26,10 +30,10 @@ export const Banner = () => {
   };
 
   const handleDownloadClick = () => {
-   
-    const pdfURL = "https://firebasestorage.googleapis.com/v0/b/portfolio-621b9.appspot.com/o/CV%20DEV%20AlfonsoLopetegui.pdf?alt=media&token=15d6e171-2e1d-411e-be34-4d7e2fe6f8d9";
-    
-    window.open(pdfURL, '_blank');
+    const pdfURL =
+      "https://firebasestorage.googleapis.com/v0/b/portfolio-621b9.appspot.com/o/CV%20DEV%20AlfonsoLopetegui.pdf?alt=media&token=15d6e171-2e1d-411e-be34-4d7e2fe6f8d9";
+
+    window.open(pdfURL, "_blank");
   };
 
   return (
@@ -44,22 +48,21 @@ export const Banner = () => {
         <h2>FRONT END DEVELOPER</h2>
       </div>
       <div
-        className={`${styles["download"]} ${
-          isHovered ? styles["visible"] : ""
-        }`}
+        className={`${styles["download"]} `}
         onClick={handleDownloadClick}
-        onMouseEnter={handleDownloadHover}
-        onMouseLeave={handleDownloadLeave}
+        
       >
         Download CV
       </div>
       <div className={styles["nav-wrapper"]}>
         <Nav />
       </div>
-      <div className={styles["cubo"]} draggable={true}></div>
-      <div className={styles["cubo2"]}></div>
-      <div className={styles["cubo3"]}></div>
-      <div className={styles["cubo4"]}></div>
+      <div className={styles["icon-container"]}>
+        <FontAwesomeIcon
+          icon={faCircleArrowDown}
+          className={styles["icon"]}
+        />
+      </div>
     </div>
   );
 };

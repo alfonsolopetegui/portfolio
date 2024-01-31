@@ -10,7 +10,7 @@
 }
 
 .title {
-  cursor: pointer;
+  /* cursor: pointer; */
   background-color: #002642;
   color: whitesmoke;
   width: 50%;
@@ -28,10 +28,10 @@
   box-shadow: 0 0 3px 6px rgba(43, 40, 40, 0.123);
 }
 
-.title:hover {
+/* .title:hover {
   background-color: #eff1f3;
   color: #002642;
-}
+} */
 
 .download.visible {
   opacity: 1;
@@ -41,20 +41,44 @@
   /* opacity: 0;
   visibility: hidden; */
   transition: opacity 0.3s ease, visibility 0.3s ease;
-  width: 200px;
+  width: 150px;
   position: absolute;
   top: 320px;
-  left: 26%;
-  background-color: #E15634;
+  left: 37%;
+  background-color: #e15634;
   color: whitesmoke;
   border-radius: 25px;
   padding: 15px 10px;
   text-align: center;
   cursor: pointer;
   box-shadow: 0 0 3px 6px rgba(43, 40, 40, 0.123);
+  transition: all 0.3s ease-in-out;
+}
+
+.download-eng {
+  /* opacity: 0;
+  visibility: hidden; */
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  width: 150px;
+  position: absolute;
+  top: 320px;
+  left: 23%;
+  background-color: #e15634;
+  color: whitesmoke;
+  border-radius: 25px;
+  padding: 15px 10px;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0 0 3px 6px rgba(43, 40, 40, 0.123);
+  transition: all 0.3s ease-in-out;
 }
 
 .download:hover {
+  background-color: #eff1f3;
+  color: #002642;
+}
+
+.download-eng:hover {
   background-color: #eff1f3;
   color: #002642;
 }
@@ -66,23 +90,28 @@
   width: fit-content;
   position: absolute;
   bottom: 20px;
-  left: 48%;
-  
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .icon {
   font-size: 50px;
-  color: #E15634;
+  color: #e15634;
   position: relative;
-  background-color: whitesmoke;
+  /* background-color: whitesmoke; */
   border-radius: 50%;
   box-shadow: 0 0 3px 6px rgba(43, 40, 40, 0.123);
   animation: salto 0.8s infinite;
 }
 
 @keyframes salto {
-  0%, 100% {top: 0;}
-  30% {top: -25px;}
+  0%,
+  100% {
+    top: 0;
+  }
+  30% {
+    top: -25px;
+  }
 }
 
 @media (max-width: 1150px) {
@@ -107,8 +136,13 @@
   }
 
   .download {
-    top: 300px;
-    
+    top: 280px;
+    left:35%;
+  }
+
+  .download-eng {
+    top: 280px;
+    left: 16%;
   }
 }
 
@@ -118,26 +152,42 @@
   }
 
   .title {
+    height: 160px;
     top: 10%;
     width: 80%;
   }
 
   .download {
-    top: 295px;
-  
+    top: 250px;
+    left:48%;
+    width: 120px;
   }
 
+  .download-eng {
+    top: 250px;
+    left:25%;
+    width: 120px;
+  }
 }
 
 @media (max-width: 560px) {
-
   .banner-container {
     height: 100vh;
   }
 
   .title {
+    height: 130px;
     top: 10%;
-    width: 98%;
+    width: 95%;
+  }
+
+  .download {
+    top: 240px;
+  }
+
+  .download-eng {
+    top: 240px;
+    left: 12%;
   }
 
   /* .download {

@@ -20,8 +20,6 @@ const db = getFirestore(firebaseApp);
 
 const montserrat = Montserrat({ subsets: ["latin"], weight: "400" });
 
-
-
 export const Projects = () => {
   const projectsRef = useRef(null);
 
@@ -86,7 +84,11 @@ export const Projects = () => {
   };
 
   return (
-    <div className={styles["projects-container"]} id="projects" ref={projectsRef}>
+    <div
+      className={styles["projects-container"]}
+      id="projects"
+      ref={projectsRef}
+    >
       <h1 className={styles["projects-title"]}>Projects</h1>
       {viewAll ? (
         <section
@@ -101,8 +103,9 @@ export const Projects = () => {
                   key={i}
                   onClick={() => handleProject(project)}
                 >
-                  <img src={project.images[0]}></img>
-                  <h4>{project.name}</h4>
+                  <h1>{project.name}</h1>
+
+                  <p>{project.description}</p>
                 </article>
               );
             })}

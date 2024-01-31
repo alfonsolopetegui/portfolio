@@ -30,7 +30,7 @@
 }
 
 .project {
-  width: 500px;
+  width: 300px;
   height: 400px;
   box-shadow: 2px 2px 3px 4px rgba(27, 25, 25, 0.171);
   cursor: pointer;
@@ -202,6 +202,12 @@
 
   .text-container {
     width: 80%;
+  }
+}
+
+@media (max-width: 850px) {
+  .project {
+    width: 400px;
   }
 }
 

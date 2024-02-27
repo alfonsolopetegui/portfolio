@@ -89,7 +89,9 @@ export const Projects = () => {
       id="projects"
       ref={projectsRef}
     >
-      <h1 className={styles["projects-title"]}>Projects</h1>
+      <h1 className={`${styles["projects-title"]} ${montserrat.className}`}>
+        Projects
+      </h1>
       {viewAll ? (
         <section
           className={styles["project-container"]}
@@ -103,9 +105,14 @@ export const Projects = () => {
                   key={i}
                   onClick={() => handleProject(project)}
                 >
-                  <h1>{project.name}</h1>
+                  <div className={styles["project-img-container"]}>
+                    <img src={project.images[0]} />
+                  </div>
 
-                  <p>{project.description}</p>
+                  <div className={styles["project-text-container"]}>
+                    <h1>{project.name.toUpperCase()}</h1>
+                    
+                  </div>
                 </article>
               );
             })}

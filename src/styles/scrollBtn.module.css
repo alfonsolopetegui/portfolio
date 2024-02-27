@@ -1,13 +1,13 @@
 .scroll-btn-container {
-    width: 60px;
-    height: 60px;
+  width: 60px;
+  height: 60px;
   position: fixed;
   bottom: 30px;
   right: 30px;
   opacity: 0;
   transition: all 0.4s ease;
   cursor: pointer;
-  background-color: #002642;
+  background-color: #014e45;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -22,6 +22,6 @@
 }
 
 .scroll-btn-container:hover {
-  background-color: whitesmoke;
-  color: #002642;
+  background-color: #037f71;
+  box-shadow: 0 0 10px 2px #02a390;
 }

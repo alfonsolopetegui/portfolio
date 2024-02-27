@@ -1,5 +1,6 @@
 "use client";
 import styles from "../styles/contact.module.css";
+import { Montserrat } from "next/font/google";
 
 import emailjs from "@emailjs/browser";
 
@@ -13,6 +14,8 @@ import {
 
 import { faEnvelope, faHouse } from "@fortawesome/free-solid-svg-icons";
 
+const monstserrat = Montserrat({ weight: "400", subsets: ["latin"] });
+
 import { useRef, useState, useEffect } from "react";
 import { Modal } from "./Modal";
 
@@ -21,8 +24,6 @@ const Contact = () => {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
-  
-
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const form = useRef();
@@ -30,9 +31,9 @@ const Contact = () => {
   useEffect(() => {
     // Aplicar estilos al cuerpo cuando el modal esté abierto
     if (isModalOpen) {
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = 'auto';
+      document.body.style.overflow = "auto";
     }
   }, [isModalOpen]);
 
@@ -58,19 +59,20 @@ const Contact = () => {
     setEmail("");
     setMessage("");
     setName("");
-    
   };
 
   const closeModal = () => {
     // Cierra el modal y restablece el estado del cuerpo
     setIsModalOpen(false);
-    document.body.style.overflow = 'auto';
+    document.body.style.overflow = "auto";
   };
 
   return (
     <>
       <div className={styles["contact-container"]} id="contact">
-        <h1 className={styles["contact-title"]}>Contact</h1>
+        <h1 className={`${styles["contact-title"]} ${monstserrat.className}`}>
+          Contact
+        </h1>
         <div className={styles["form-container"]}>
           <form
             className={styles["contact-form"]}
@@ -80,6 +82,7 @@ const Contact = () => {
             <div className={styles["form-inputs"]}>
               <div className={styles["form-field"]}>
                 <input
+                  className={monstserrat.className}
                   autoComplete="off"
                   type="text"
                   name="user_name"
@@ -91,6 +94,7 @@ const Contact = () => {
               </div>
               <div className={styles["form-field"]}>
                 <input
+                  className={monstserrat.className}
                   autoComplete="off"
                   type="email"
                   name="user_email"
@@ -104,15 +108,17 @@ const Contact = () => {
 
             <div className={styles["textarea-container"]}>
               <textarea
+                className={monstserrat.className}
                 name="message"
                 placeholder="Message"
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
               ></textarea>
             </div>
-            <button>Send Message</button>
+
+            <button className={monstserrat.className}>Send Message</button>
           </form>
-          <div className={styles["contacts"]}>
+          {/* <div className={styles["contacts"]}>
             <div className={styles["contact-icon"]}>
               <FontAwesomeIcon icon={faHouse} className={styles["icono"]} />
               <h4>Buenos Aires, Argentina</h4>
@@ -133,13 +139,11 @@ const Contact = () => {
               <FontAwesomeIcon icon={faLinkedin} className={styles["icono"]} />
               <h4>linkedin.com/in/alfonso-lopetegui-42702a277</h4>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
-       {/* Mostrar el modal cuando isModalOpen es true */}
-    {isModalOpen && (
-      <Modal handler={closeModal} text={'Message send!'}/>
-    )}
+      {/* Mostrar el modal cuando isModalOpen es true */}
+      {isModalOpen && <Modal handler={closeModal} text={"Message send!"} />}
     </>
   );
 };

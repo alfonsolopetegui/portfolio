@@ -1,64 +1,45 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "../styles/nav.module.css";
 import Link from "next/link";
+import { Averia_Libre, Montserrat } from "next/font/google";
 
-//Font Awesome
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faChevronLeft,
-  faChevronRight,
-} from "@fortawesome/free-solid-svg-icons";
+const averia = Averia_Libre({ weight: "400", subsets: ["latin"] });
+const montserrat = Montserrat({ weight: "400", subsets: ["latin"] });
 
 export const Nav = () => {
-  //visibilidad del menu
-  const [active, setActive] = useState(false);
-  //visibilidad del icono izquierda
-  const [visible, setVisible] = useState(false);
+  const [logoActive, setLogoActive] = useState(false);
 
   const handleActive = () => {
     setVisible(true);
     setActive(!active);
   };
 
-  const handleVisible = () => {
-    setActive(false);
 
-    const espera = setTimeout(() => {
-      setVisible(false);
-    }, 700);
-  };
 
-  
   return (
     <div
-      className={`${styles["nav-container"]} ${active ? styles.active : ""}`}
-      style={{scrollBehavior: 'smooth'}}
+      className={styles["nav-container"]}
+      style={{ scrollBehavior: "smooth" }}
     >
-      <div
-        className={`${styles["icon-container"]} ${
-          visible ? styles.visible : ""
-        }`}
-      >
-        <FontAwesomeIcon
-          onClick={handleActive}
-          icon={faChevronLeft}
-          className={styles["icono-left"]}
-        />
+      <div className={styles["logo-container"]}>
+        <h3 className={`${styles["logo"]} ${montserrat.className}`}>ALFONSOLOPETEGUIDEV</h3>
       </div>
+
       <nav>
-        <Link href={"#banner"} onClick={handleVisible}>
-          Home
+        <Link href={"#banner"}>
+          HOME
         </Link>
-        <Link href={"#about"} onClick={handleVisible}>About</Link>
-        <Link href={"#projects"} onClick={handleVisible}>Projects</Link>
-        <Link href={"#contact"} onClick={handleVisible}>Contact</Link>
+        <Link href={"#about"}>
+          ABOUT
+        </Link>
+        <Link href={"#projects"}>
+          PROJECTS
+        </Link>
+        <Link href={"#contact"}>
+          CONTACT
+        </Link>
       </nav>
-      <FontAwesomeIcon
-        onClick={handleVisible}
-        icon={faChevronRight}
-        className={styles["icono-right"]}
-      />
     </div>
   );
 };

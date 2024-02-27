@@ -1,13 +1,17 @@
 .footer-container {
     width: 100%;
     height: 120px;
-    background: #086788;
+    background-color: rgba(0, 0, 0, 0.324);
+
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 20px;
-    font-size: 25px;
-    color: whitesmoke;
+    gap: 40px;
+    font-size: 50px;
+    color: rgba(219, 219, 219, 0.372);
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+
 }
 
 .icono {
@@ -16,5 +20,5 @@
 }
 
 .icono:hover {
-color: #DB7F67;
+color: #189795;
 }

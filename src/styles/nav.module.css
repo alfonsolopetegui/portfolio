@@ -1,4 +1,4 @@
-.nav-container {
+/* .nav-container {
     position: absolute;
     top: 30%;
     right: -300px;
@@ -16,7 +16,7 @@
     padding: 20px 0 20px 0;
     background-color: #E15634;
     border-radius: 15px 0 0 15px;
-    /* box-shadow: 0 0 2px 2px rgba(245, 245, 245, 0.354); */
+   
     box-shadow: 0 0 3px 6px rgba(43, 40, 40, 0.123);
     z-index: 5;
 }
@@ -26,7 +26,7 @@
     display: flex;
     align-items: center;
     width: 100%;
-    /* height: 100%; */
+
     font-size: 20px;
     color: whitesmoke;
     transition: all ease 0.3s;
@@ -97,7 +97,58 @@
   }
 
 @media (max-width: 560px) {
-    /* .nav-container {
-        top: 50%;
-    } */
+
+} */
+
+.nav-container {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px;
+}
+
+.nav-container nav {
+  display: flex;
+  gap: 30px;
+  font-size: 16px;
+  color: whitesmoke;
+}
+
+.nav-container nav a {
+  color: rgb(146, 143, 143);
+  transition: all 0.3s ease;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.nav-container nav a:hover {
+  color: #24d4d0;
+}
+
+.logo-container {
+  width: 100px;
+  overflow-x: hidden;
+}
+
+.logo {
+  color: rgba(245, 245, 245, 0.582);
+  transition: color ease 0.3s;
+  cursor: pointer;
+  animation: moveText 5s linear infinite; /* Agregamos una animación llamada moveText */
+}
+
+.logo:hover {
+  color: #24d4d0;
+}
+
+@keyframes moveText {
+  0% {
+    transform: translateX(100%); /* Comienza desde la derecha */
+  }
+  100% {
+    transform: translateX(-240%); /* Se mueve hacia la izquierda */
+  }
 }

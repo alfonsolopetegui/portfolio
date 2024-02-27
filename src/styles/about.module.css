@@ -1,13 +1,14 @@
 .about-container {
-  margin-top: 80px;
+  /* margin-top: 80px; */
   height: fit-content;
   padding-top: 100px;
   padding-bottom: 40px;
   margin-bottom: 120px;
-  background-color: #E15634;
+  /* background-color: #E15634; */
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow-x: hidden;
 }
 
 .about-resume {
@@ -15,46 +16,73 @@
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  margin-bottom: 80px;
+  /* margin-bottom: 80px; */
 }
 
 .about-title {
-    width: 300px;
-    /* background-color: #002642; */
-    background: #086788;
-    text-align: center;
-    padding: 5px 0;
-    color: whitesmoke;
-    margin-bottom: 60px;
-    border-radius: 10px;
-    box-shadow: 2px 2px 3px 4px rgba(0, 0, 0, 0.094);
-    /* margin-top: 25px; */
+  /* width: 300px; */
+  /* background-color: #002642; */
+  /* background: #086788; */
+  /* font-family: 'Montserrat'; */
+  font-size: 70px;
+  font-weight: 100;
+  text-align: center;
+  padding: 5px 0;
+  color: whitesmoke;
+  margin-bottom: 60px;
+  /* border-radius: 10px; */
+  /* box-shadow: 2px 2px 3px 4px rgba(0, 0, 0, 0.094); */
+  /* margin-top: 25px; */
 }
 
 .about-resume article {
   width: 500px;
-  height: fit-content;
+  min-height: 500px;
+  border: solid 1px #095453;
   /* border: solid 1px grey; */
-  background-color: whitesmoke;
+  background-color: #071718;
   border-radius: 15px;
   box-shadow: 2px 2px 3px 4px rgba(0, 0, 0, 0.094);
 }
 
-.hi-there h3, .fullstack h3 {
-    font-size: 25px;
-    width: 100%;
-    text-align: center;
-    padding: 30px;
+.hi-there h3,
+.fullstack h3 {
+  color: whitesmoke;
+  font-size: 25px;
+  width: 100%;
+  text-align: center;
+  padding: 30px;
 }
 
 .hi-there p {
   text-align: justify;
   padding: 0 30px;
-  margin-bottom: 30px;
-  font-size: 15px;
-  color: #645853;
+  /* margin-bottom: 30px; */
+  font-size: 20px;
+  color: rgba(245, 245, 245, 0.815);
+  
 }
 
+.hi-there {
+  transform: translateX(-150%);
+}
+.hi-there-animation {
+  animation-name: slideInLeft;
+  animation-duration: 1s;
+  animation-timing-function: ease;
+  animation-fill-mode: both;
+}
+
+@keyframes slideInLeft {
+  0% {
+    /* opacity: 0; */
+    transform: translateX(-150%);
+  }
+  100% {
+    /* opacity: 1; */
+    transform: translateX(0);
+  }
+}
 .hi-there h4 {
   width: 100%;
   text-align: center;
@@ -62,21 +90,43 @@
 }
 
 .btn-container {
-  
   display: flex;
   justify-content: center;
   gap: 20px;
-
 }
 .fullstack {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-bottom: 50px;
+  transform: translateX(150%);
+  /* padding-bottom: 50px; */
+}
+.fullstack-animation {
+  animation-name: slideInRight;
+  animation-duration: 1s;
+  animation-timing-function: ease;
+  animation-fill-mode: both;
+}
+
+@keyframes slideInRight {
+  0% {
+    /* opacity: 0; */
+    transform: translateX(100%);
+  }
+  100% {
+    /* opacity: 1; */
+    transform: translateX(0);
+  }
 }
 
 .icono {
-    font-size: 50px;
+  font-size: 90px;
+  color: white;
+  transition: transform ease 1s;
+}
+
+.icono:hover {
+  transform: rotateY(180deg);
 }
 
 .icons {
@@ -89,7 +139,8 @@
   align-self: center;
   display: flex;
   justify-content: space-around;
-  width: 200px;
+  gap: 30px;
+  /* width: 200px; */
   margin-top: 18px;
   margin-bottom: 30px;
 }
@@ -97,7 +148,9 @@
 .advanced-icons {
   display: flex;
   justify-content: space-around;
-  width: 250px;
+  /* width: 250px; */
+  gap: 40px;
+  margin-bottom: 30px;
 }
 
 @media (max-width: 1000px) {

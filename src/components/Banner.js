@@ -37,7 +37,7 @@ export const Banner = () => {
       <div className={styles["title"]}>
         <h5>FULL STACK DEVELOPER</h5>
         <h1 className={montserrat.className}>
-          Desarrollo de aplicaciones web desde cero, con tecnologías
+          Desarrollo de aplicaciones <br></br> web desde cero, con <br></br> tecnologías
           JavasScript
         </h1>
         <button className={montserrat.className}>descargar CV</button>

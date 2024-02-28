@@ -29,6 +29,30 @@ export const Projects = () => {
 
   const [data, setData] = useState([]);
 
+
+  const [visibleProjectIndex, setVisibleProjectIndex] = useState(-1);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (projectsRef.current) {
+        const rect = projectsRef.current.getBoundingClientRect();
+        const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+        if (rect.top < windowHeight) {
+          // Mostrar el próximo proyecto solo si todos los proyectos anteriores ya se han mostrado
+          if (visibleProjectIndex < data.length - 1) {
+            setVisibleProjectIndex(prevIndex => prevIndex + 1);
+          }
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [visibleProjectIndex, data]);
+
   useEffect(() => {
     const projectsData = async () => {
       try {
@@ -98,10 +122,10 @@ export const Projects = () => {
           style={montserrat.style}
         >
           {data &&
-            data.map((project, i) => {
+            data.slice(0, visibleProjectIndex + 1).map((project, i) => {
               return (
                 <article
-                  className={styles["project"]}
+                className={`${styles["project"]} ${styles["project-enter"]}`}
                   key={i}
                   onClick={() => handleProject(project)}
                 >

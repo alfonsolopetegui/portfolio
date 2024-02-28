@@ -120,16 +120,16 @@ export const Projects = () => {
       ) : (
         <div className={styles["view-container"]}>
           <div className={styles["image-container"]}>
-            <img src={selectedProject.images[selectedImage]}></img>
-            <FontAwesomeIcon
-              onClick={handleImageUp}
-              icon={faChevronRight}
-              className={styles["btn-image-up"]}
-            />
+            <img src={selectedProject.images[selectedImage]}/>
             <FontAwesomeIcon
               onClick={handleImageDown}
               icon={faChevronLeft}
               className={styles["btn-image-down"]}
+            />
+            <FontAwesomeIcon
+              onClick={handleImageUp}
+              icon={faChevronRight}
+              className={styles["btn-image-up"]}
             />
           </div>
           <div className={styles["text-container"]}>

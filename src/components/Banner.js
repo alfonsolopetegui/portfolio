@@ -13,14 +13,14 @@ const montserrat = Montserrat({ subsets: ["latin"], weight: "400" });
 export const Banner = () => {
   const handleDownloadClick = () => {
     const pdfURL =
-      "https://firebasestorage.googleapis.com/v0/b/portfolio-621b9.appspot.com/o/CV%20DEV%20ALopetegui%20Feb.pdf?alt=media&token=6929c17b-dbe0-4bfe-b49d-52def99d0cf7";
+      "https://firebasestorage.googleapis.com/v0/b/portfolio-621b9.appspot.com/o/CV%20Alfonso%20Lopetegui.pdf?alt=media&token=7a1dc07b-3491-4839-8c6f-f46cb3e18f9b";
 
     window.open(pdfURL, "_blank");
   };
 
   const handleDownloadClickEng = () => {
     const pdfURL =
-      "https://firebasestorage.googleapis.com/v0/b/portfolio-621b9.appspot.com/o/CV%20DEV%20Lopetegui%20English%20Feb.pdf?alt=media&token=9e5f82f5-fd54-42b5-b852-3a1a2548d0bb";
+      "https://firebasestorage.googleapis.com/v0/b/portfolio-621b9.appspot.com/o/CV%20Alfonso%20Lopetegui.pdf?alt=media&token=7a1dc07b-3491-4839-8c6f-f46cb3e18f9b";
 
     window.open(pdfURL, "_blank");
   };
@@ -37,10 +37,10 @@ export const Banner = () => {
       <div className={styles["title"]}>
         <h5>FULL STACK DEVELOPER</h5>
         <h1 className={montserrat.className}>
-          Desarrollo de aplicaciones <br></br> web desde cero, con <br></br> tecnologías
+          Desarrollo de aplicaciones web desde cero, con tecnologías
           JavasScript
         </h1>
-        <button className={montserrat.className}>descargar CV</button>
+        <button onClick={handleDownloadClick} className={montserrat.className}>descargar CV</button>
       </div>
 
 

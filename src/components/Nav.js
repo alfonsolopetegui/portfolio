@@ -27,7 +27,7 @@ export const Nav = () => {
       </div>
 
       <nav>
-        <Link href={"#banner"}>
+        <Link href={"#banner"} style={{color: '#24d4d0'}}>
           HOME
         </Link>
         <Link href={"#about"}>

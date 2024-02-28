@@ -157,10 +157,26 @@
   .about-resume {
     gap: 40px;
   }
+
+
+
 }
 
 @media (max-width: 550px) {
+  .about-title {
+    font-size: 50px;
+  }
   .about-resume {
     padding: 0 5px;
+  }
+
+  .about-resume article {
+    width: 95%;
+    min-height: fit-content;
+    padding-bottom: 20px;
+  }
+
+  .about-resume article p {
+    font-size: 18px;
   }
 }

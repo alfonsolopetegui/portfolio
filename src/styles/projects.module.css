@@ -72,6 +72,13 @@
   
 }
 
+.project-tech {
+  display: flex;
+  
+}
+
+
+
 /* VIEW */
 
 .view-container {
@@ -238,9 +245,7 @@
     width: 95%;
   }
 
-  .image-container img {
-    /* height: 20vh; */
-  }
+
 
   .text-container {
     width: 100%;

@@ -29,18 +29,18 @@ export const Projects = () => {
 
   const [data, setData] = useState([]);
 
-
   const [visibleProjectIndex, setVisibleProjectIndex] = useState(-1);
 
   useEffect(() => {
     const handleScroll = () => {
       if (projectsRef.current) {
         const rect = projectsRef.current.getBoundingClientRect();
-        const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+        const windowHeight =
+          window.innerHeight || document.documentElement.clientHeight;
         if (rect.top < windowHeight) {
           // Mostrar el próximo proyecto solo si todos los proyectos anteriores ya se han mostrado
           if (visibleProjectIndex < data.length - 1) {
-            setVisibleProjectIndex(prevIndex => prevIndex + 1);
+            setVisibleProjectIndex((prevIndex) => prevIndex + 1);
           }
         }
       }
@@ -86,7 +86,7 @@ export const Projects = () => {
   };
 
   const handleImageUp = () => {
-    if (selectedImage < 2) {
+    if (selectedImage < selectedProject.images.length - 1) {
       setSelectedImage(selectedImage + 1);
     } else {
       setSelectedImage(0);
@@ -95,7 +95,7 @@ export const Projects = () => {
 
   const handleImageDown = () => {
     if (selectedImage === 0) {
-      setSelectedImage(2);
+      setSelectedImage(selectedProject.images.length - 1);
     } else {
       setSelectedImage(selectedImage - 1);
     }
@@ -125,7 +125,7 @@ export const Projects = () => {
             data.slice(0, visibleProjectIndex + 1).map((project, i) => {
               return (
                 <article
-                className={`${styles["project"]} ${styles["project-enter"]}`}
+                  className={`${styles["project"]} ${styles["project-enter"]}`}
                   key={i}
                   onClick={() => handleProject(project)}
                 >
@@ -135,7 +135,9 @@ export const Projects = () => {
 
                   <div className={styles["project-text-container"]}>
                     <h1>{project.name.toUpperCase()}</h1>
-                    
+                    <div className={styles["project-tech"]}>
+                      <h3>{project.technologies.join(' ')}</h3>
+                    </div>
                   </div>
                 </article>
               );
@@ -144,7 +146,7 @@ export const Projects = () => {
       ) : (
         <div className={styles["view-container"]}>
           <div className={styles["image-container"]}>
-            <img src={selectedProject.images[selectedImage]}/>
+            <img src={selectedProject.images[selectedImage]} />
             <FontAwesomeIcon
               onClick={handleImageDown}
               icon={faChevronLeft}

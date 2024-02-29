@@ -1,8 +1,9 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import styles from "../styles/nav.module.css";
 import Link from "next/link";
 import { Averia_Libre, Montserrat } from "next/font/google";
+import LanguageContext from "@/context/languajeContext";
 
 import { Twirl as Hamburger } from "hamburger-react";
 
@@ -13,6 +14,7 @@ export const Nav = () => {
   const [navVisible, setNavVisible] = useState(false);
   const [logoActive, setLogoActive] = useState(false);
   const [isOpen, setOpen] = useState(false);
+  const { isEnglish, setIsEnglish } = useContext(LanguageContext);
 
   const handleClose = () => {
     console.log("handleClose");
@@ -40,6 +42,14 @@ export const Nav = () => {
   console.log("navVisible", navVisible);
   console.log("isOpen", isOpen);
 
+  const handleSpanish = () => {
+    setIsEnglish(false);
+  };
+
+  const handleEnglish = () => {
+    setIsEnglish(true);
+  };
+
   return (
     <div
       className={styles["nav-container"]}
@@ -50,43 +60,62 @@ export const Nav = () => {
           ALFONSOLOPETEGUIDEV
         </h3>
       </div>
-      <div
-        className={styles["hamburger-container"]}
-        style={{ zIndex: "20", paddingRight: "30px" }}
-      >
-        <Hamburger
-          rounded
-          color="white"
-          toggled={isOpen}
-          toggle={setOpen}
-          onToggle={(toggled) => {
-            if (toggled) {
-              setNavVisible(true);
-            } else {
-              setNavVisible(false);
-            }
-          }}
-        />
+      <div className={styles["right-nav-container"]}>
+        <div
+          className={styles["hamburger-container"]}
+          style={{ zIndex: "20", paddingRight: "30px" }}
+        >
+          <Hamburger
+            rounded
+            color="white"
+            toggled={isOpen}
+            toggle={setOpen}
+            onToggle={(toggled) => {
+              if (toggled) {
+                setNavVisible(true);
+              } else {
+                setNavVisible(false);
+              }
+            }}
+          />
+        </div>
+        {navVisible && (
+          <nav>
+            <div onClick={handleClose} className={styles["nav-link"]}>
+              <Link href={"#banner"} style={{ color: "#24d4d0" }}>
+                HOME
+              </Link>
+            </div>
+            <div onClick={handleClose} className={styles["nav-link"]}>
+              <Link href={"#about"}>ABOUT</Link>
+            </div>
+            <div onClick={handleClose} className={styles["nav-link"]}>
+              <Link href={"#projects"}>PROJECTS</Link>
+            </div>
+            <div onClick={handleClose} className={styles["nav-link"]}>
+              <Link href={"#contact"}>CONTACT</Link>
+            </div>
+          </nav>
+        )}
+        <div className={styles["language-btn-container"]}>
+          <h4
+            onClick={handleSpanish}
+            className={`${styles["language-btn"]} ${
+              isEnglish === false ? styles["selected"] : ""
+            }`}
+          >
+            ES
+          </h4>
+          <h4
+            onClick={handleEnglish}
+            className={`${styles["language-btn"]} ${
+              isEnglish === true ? styles["selected"] : ""
+            }`}
+          >
+            EN
+          </h4>
+        </div>
       </div>
-
-      {navVisible && (
-        <nav>
-          <div onClick={handleClose} className={styles["nav-link"]}>
-            <Link href={"#banner"} style={{ color: "#24d4d0" }}>
-              HOME
-            </Link>
-          </div>
-          <div onClick={handleClose} className={styles["nav-link"]}>
-            <Link href={"#about"}>ABOUT</Link>
-          </div>
-          <div onClick={handleClose} className={styles["nav-link"]}>
-            <Link href={"#projects"}>PROJECTS</Link>
-          </div>
-          <div onClick={handleClose} className={styles["nav-link"]}>
-            <Link href={"#contact"}>CONTACT</Link>
-          </div>
-        </nav>
-      )}
     </div>
   );
 };

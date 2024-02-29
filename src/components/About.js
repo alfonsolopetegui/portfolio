@@ -1,7 +1,8 @@
 "use client";
 import styles from "../styles/about.module.css";
 import Image from "next/image";
-import React, { useEffect, useRef } from "react";
+import React, { useContext, useEffect, useRef } from "react";
+import LanguageContext from "@/context/languajeContext";
 
 import { Montserrat, Inter } from "next/font/google";
 
@@ -20,6 +21,7 @@ const montserrat = Montserrat({ subsets: ["latin"], weight: "400" });
 const inter = Inter({ subsets: ["latin"], weight: "700" });
 
 export const About = () => {
+  const { isEnglish } = useContext(LanguageContext);
   const fullstackRef = useRef(null);
   const hiThereRef = useRef(null);
 
@@ -62,36 +64,32 @@ export const About = () => {
   }, []);
 
   return (
-    <div
-      className={styles["about-container"]}
-      id="about"
-    >
-      <h1 className={`${styles["about-title"]} ${montserrat.className}`} >
-        About me...
+    <div className={styles["about-container"]} id="about">
+      <h1 className={`${styles["about-title"]} ${montserrat.className}`}>
+        {isEnglish ? "About me..." : "Sobre mi..."}
       </h1>
       <section className={styles["about-resume"]}>
-        <article ref={hiThereRef}  className={styles["hi-there"]}>
-          <h3 className={montserrat.className}>Hi there! </h3>
+        <article ref={hiThereRef} className={styles["hi-there"]}>
+          <h3 className={montserrat.className}>
+            {isEnglish ? "Hi there!" : "Hola!"}{" "}
+          </h3>
           <p className={montserrat.className}>
-            I am a Front-End Developer with approximately one year of experience
-            in React and Next.js. I have undergone a comprehensive course
-            covering back-end fundamentals, including Express.js and MongoDB,
+            {isEnglish
+              ? `I am a Front-End Developer with approximately one year of experience
+            in React and Next js. I have undergone a comprehensive course
+            covering back-end fundamentals, including Express js and MongoDB,
             thereby completing proficiency in the MERN stack. I have found the
             coding world to be incredibly exciting, and I am always eager to
-            learn new technologies. Currently, I am studying SQL and TypeScript, strengthening
-            my foundation in Node.js and Express, and exploring various UI
-            libraries. I am looking forward to taking on new challenges and
-            opportunities.
+            learn new technologies. Currently, I am studying SQL and TypeScript,
+            strengthening my foundation in Node.js and Express, and exploring
+            various UI libraries. I am looking forward to taking on new
+            challenges and opportunities.`
+              : "Soy un desarrollador Front-End con aproximadamente un año de experiencia en React y Next.js. He realizado un curso exhaustivo que cubre los fundamentos del back-end, incluyendo Express.js y MongoDB, completando así mi competencia en el stack MERN. He encontrado el mundo de la programación increíblemente emocionante, y siempre estoy ansioso por aprender nuevas tecnologías. Actualmente, estoy estudiando SQL y TypeScript, fortaleciendo mis bases en Node.js y Express, y explorando diversas bibliotecas de interfaz de usuario. Estoy ansioso por asumir nuevos desafíos y oportunidades."}
           </p>
-          {/* <h4>Download my CV</h4>
-          <div className={styles["btn-container"]}>
-            <button>Spanish</button>
-            <button>English</button>
-          </div> */}
         </article>
 
         <article ref={fullstackRef} className={styles["fullstack"]}>
-          <h3 className={montserrat.className}>Full stack development</h3>
+          <h3 className={montserrat.className}>{isEnglish ? 'Full stack development': 'Desarrollo Full stack'}</h3>
           <section className={styles["icons"]}>
             <div className={styles["basic-icons"]}>
               <FontAwesomeIcon icon={faHtml5} className={styles["icono"]} />

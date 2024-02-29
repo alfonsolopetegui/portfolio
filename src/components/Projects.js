@@ -2,7 +2,8 @@
 import styles from "../styles/projects.module.css";
 
 import { Montserrat } from "next/font/google";
-import { useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
+import LanguageContext from "@/context/languajeContext";
 
 //Font Awesome
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -21,6 +22,7 @@ const db = getFirestore(firebaseApp);
 const montserrat = Montserrat({ subsets: ["latin"], weight: "400" });
 
 export const Projects = () => {
+  const { isEnglish } = useContext(LanguageContext);
   const projectsRef = useRef(null);
 
   const [viewAll, setViewAll] = useState(true);
@@ -114,7 +116,7 @@ export const Projects = () => {
       ref={projectsRef}
     >
       <h1 className={`${styles["projects-title"]} ${montserrat.className}`}>
-        Projects
+        {isEnglish ? "Projects" : "Proyectos"}
       </h1>
       {viewAll ? (
         <section
@@ -136,7 +138,7 @@ export const Projects = () => {
                   <div className={styles["project-text-container"]}>
                     <h1>{project.name.toUpperCase()}</h1>
                     <div className={styles["project-tech"]}>
-                      <h3>{project.technologies.join(' ')}</h3>
+                      <h3>{project.technologies.join(" ")}</h3>
                     </div>
                   </div>
                 </article>
@@ -160,14 +162,15 @@ export const Projects = () => {
           </div>
           <div className={styles["text-container"]}>
             <h4>{selectedProject.name}</h4>
-            <p>{selectedProject.description}</p>
+            <p>{isEnglish ? selectedProject.description : selectedProject.descriptionSpa}</p>
+            {console.log(selectedProject)}
             {selectedProject.page && (
               <p onClick={handleVisit} className={styles["page-link"]}>
                 {selectedProject.page}
               </p>
             )}
             {selectedProject.user && <p>{selectedProject.user}</p>}
-            <button onClick={handleGoBack}>Go back</button>
+            <button onClick={handleGoBack}>{isEnglish ? 'Close' : 'Cerrar'}</button>
           </div>
         </div>
       )}

@@ -1,6 +1,7 @@
 "use client";
 import styles from "../styles/contact.module.css";
 import { Montserrat } from "next/font/google";
+import LanguageContext from "@/context/languajeContext";
 
 import emailjs from "@emailjs/browser";
 
@@ -16,10 +17,11 @@ import { faEnvelope, faHouse } from "@fortawesome/free-solid-svg-icons";
 
 const monstserrat = Montserrat({ weight: "400", subsets: ["latin"] });
 
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState, useEffect, useContext } from "react";
 import { Modal } from "./Modal";
 
 const Contact = () => {
+  const { isEnglish } = useContext(LanguageContext);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
@@ -71,7 +73,7 @@ const Contact = () => {
     <>
       <div className={styles["contact-container"]} id="contact">
         <h1 className={`${styles["contact-title"]} ${monstserrat.className}`}>
-          Contact
+          {isEnglish ? "Contact" : "Contacto"}
         </h1>
         <div className={styles["form-container"]}>
           <form
@@ -87,7 +89,7 @@ const Contact = () => {
                   type="text"
                   name="user_name"
                   id="user_name"
-                  placeholder="Name"
+                  placeholder={isEnglish ? "Name" : "Nombre"}
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                 ></input>
@@ -110,36 +112,15 @@ const Contact = () => {
               <textarea
                 className={monstserrat.className}
                 name="message"
-                placeholder="Message"
+                placeholder={isEnglish ? "Message" : 'Mensaje'}
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
               ></textarea>
             </div>
 
-            <button className={monstserrat.className}>Send Message</button>
+            <button className={monstserrat.className}>{isEnglish ? 'Send Message': 'Enviar Mensaje'}</button>
           </form>
-          {/* <div className={styles["contacts"]}>
-            <div className={styles["contact-icon"]}>
-              <FontAwesomeIcon icon={faHouse} className={styles["icono"]} />
-              <h4>Buenos Aires, Argentina</h4>
-            </div>
-            <div className={styles["contact-icon"]}>
-              <FontAwesomeIcon icon={faWhatsapp} className={styles["icono"]} />
-              <h4>+52 221 4188292</h4>
-            </div>
-            <div className={styles["contact-icon"]}>
-              <FontAwesomeIcon icon={faEnvelope} className={styles["icono"]} />
-              <h4>alfonsolopetegui@hotmail.com</h4>
-            </div>
-            <div className={styles["contact-icon"]}>
-              <FontAwesomeIcon icon={faGithub} className={styles["icono"]} />
-              <h4>https://github.com/alfonsolopetegui</h4>
-            </div>
-            <div className={styles["contact-icon"]}>
-              <FontAwesomeIcon icon={faLinkedin} className={styles["icono"]} />
-              <h4>linkedin.com/in/alfonso-lopetegui-42702a277</h4>
-            </div>
-          </div> */}
+         
         </div>
       </div>
       {/* Mostrar el modal cuando isModalOpen es true */}

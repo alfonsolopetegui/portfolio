@@ -111,11 +111,17 @@
   padding: 0 50px;
 }
 
+.right-nav-container {
+  display: flex;
+
+}
+
 .nav-container nav {
   display: flex;
   gap: 30px;
   font-size: 16px;
   color: whitesmoke;
+  margin-right: 50px;
 }
 
 .nav-container nav a {
@@ -142,6 +148,23 @@
 
 .logo:hover {
   color: #24d4d0;
+}
+
+.language-btn-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+
+
+.language-btn {
+  color: rgba(101, 94, 94, 0.58);
+  cursor: pointer;
+}
+
+.selected {
+  color: white;
 }
 
 @keyframes moveText {
@@ -171,6 +194,10 @@
 @media (max-width: 900px) {
   .nav-container {
     padding: 0 0 0 20px;
+  }
+
+  .language-btn-container {
+    padding-right: 30px;
   }
   
   .logo {

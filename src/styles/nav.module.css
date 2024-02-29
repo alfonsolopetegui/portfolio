@@ -192,7 +192,7 @@
     animation: openNav 0.5s linear;
   }
 
-  .nav-container nav a {
+  .nav-link {
     text-align: center;
     width: 100%;
     color: white;

@@ -15,7 +15,7 @@ export const Nav = () => {
   const [isOpen, setOpen] = useState(false);
 
   const handleClose = () => {
-
+    console.log("handleClose");
     if (window.innerWidth < 900) {
       setNavVisible(false);
     }
@@ -37,6 +37,9 @@ export const Nav = () => {
     };
   }, []);
 
+  console.log("navVisible", navVisible);
+  console.log("isOpen", isOpen);
+
   return (
     <div
       className={styles["nav-container"]}
@@ -47,7 +50,10 @@ export const Nav = () => {
           ALFONSOLOPETEGUIDEV
         </h3>
       </div>
-      <div className={styles["hamburger-container"]} style={{zIndex:'20', paddingRight:'30px'}}>
+      <div
+        className={styles["hamburger-container"]}
+        style={{ zIndex: "20", paddingRight: "30px" }}
+      >
         <Hamburger
           rounded
           color="white"
@@ -62,25 +68,23 @@ export const Nav = () => {
           }}
         />
       </div>
-      
+
       {navVisible && (
         <nav>
-          <Link
-            href={"#banner"}
-            style={{ color: "#24d4d0" }}
-            onClick={handleClose}
-          >
-            HOME
-          </Link>
-          <Link onClick={handleClose} href={"#about"}>
-            ABOUT
-          </Link>
-          <Link onClick={handleClose} href={"#projects"}>
-            PROJECTS
-          </Link>
-          <Link onClick={handleClose} href={"#contact"}>
-            CONTACT
-          </Link>
+          <div onClick={handleClose} className={styles["nav-link"]}>
+            <Link href={"#banner"} style={{ color: "#24d4d0" }}>
+              HOME
+            </Link>
+          </div>
+          <div onClick={handleClose} className={styles["nav-link"]}>
+            <Link href={"#about"}>ABOUT</Link>
+          </div>
+          <div onClick={handleClose} className={styles["nav-link"]}>
+            <Link href={"#projects"}>PROJECTS</Link>
+          </div>
+          <div onClick={handleClose} className={styles["nav-link"]}>
+            <Link href={"#contact"}>CONTACT</Link>
+          </div>
         </nav>
       )}
     </div>

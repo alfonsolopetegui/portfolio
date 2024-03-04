@@ -87,13 +87,15 @@ export const Nav = () => {
               </Link>
             </div>
             <div onClick={handleClose} className={styles["nav-link"]}>
-              <Link href={"#about"}>ABOUT</Link>
+              <Link href={"#about"}>{isEnglish ? "ABOUT" : "SOBRE MI"}</Link>
             </div>
             <div onClick={handleClose} className={styles["nav-link"]}>
-              <Link href={"#projects"}>PROJECTS</Link>
+              <Link href={"#projects"}>
+                {isEnglish ? "PROJECTS" : "PROYECTOS"}
+              </Link>
             </div>
             <div onClick={handleClose} className={styles["nav-link"]}>
-              <Link href={"#contact"}>CONTACT</Link>
+              <Link href={"#contact"}>{isEnglish ? 'CONTACT' : 'CONTACTO'}</Link>
             </div>
           </nav>
         )}

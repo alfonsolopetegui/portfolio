@@ -191,10 +191,11 @@
   height: 100%;
   display: flex;
   overflow-x: hidden;
+  position: relative;
 }
 
 .image-container {
-  width: 40%;
+  width: 50%;
   height: 100%;
   display: flex;
   justify-content: center;
@@ -217,12 +218,12 @@
 }
 
 .title {
-  width: 60%;
+  width: 50%;
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 15px;
+  gap: 20px;
 }
 .title h5 {
   font-size: 16px;
@@ -232,10 +233,22 @@
 
 .title h1 {
   color: white;
-  font-size: 4vw;
+  font-size: 5vw;
   font-weight: 300;
 }
 
+.icon-container {
+  font-size: 25px;
+  color: whitesmoke;
+  display: flex;
+  /* justify-content: center; */
+  gap: 25px;
+  align-items: center;
+  border: 1px solid whitesmoke;
+  border-radius: 30px;
+  padding: 15px 30px;
+  width: fit-content;
+}
 .title button {
   width: 300px;
   padding: 20px;
@@ -248,6 +261,11 @@
   box-shadow: 0 0 4px 1px #24d4d0;
   cursor: pointer;
   transition: all ease 0.3s;
+  margin-top: 20px;
+  position: absolute;
+  top: 85%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .title button:hover {
@@ -279,15 +297,14 @@
     width: 150px;
     height: 150px;
   }
-
 }
 
 @media (max-width: 550px) {
-
   .banner-container {
     flex-direction: column-reverse;
     justify-content: space-around;
   }
+
 
   .title {
     width: 100%;
@@ -297,13 +314,12 @@
     margin-top: 50px;
   }
 
-
   .title h1 {
     font-size: 40px;
   }
 
   .title button {
-    margin-top: 10px;
+    top: 53%;
     width: 200px;
   }
   .image-container {

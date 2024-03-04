@@ -4,10 +4,18 @@ import styles from "../styles/banner.module.css";
 import { Nav } from "./Nav";
 import { Montserrat } from "next/font/google";
 import LanguageContext from "@/context/languajeContext";
+import Image from "next/image";
 
 //Font Awesome
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCircleArrowDown } from "@fortawesome/free-solid-svg-icons";
+import {
+  faReact,
+  faJs,
+  faHtml5,
+  faNodeJs,
+  faCss3Alt,
+  faGit,
+} from "@fortawesome/free-brands-svg-icons";
 
 const montserrat = Montserrat({ subsets: ["latin"], weight: "400" });
 
@@ -35,15 +43,25 @@ export const Banner = () => {
       </div>
 
       <div className={styles["title"]}>
-        <h5>FULL STACK DEVELOPER</h5>
+        <h5>FULL STACK WEB DEVELOPER</h5>
         <h1 className={montserrat.className}>
-          {isEnglish
-            ? "Web development from scratch, with JavaScript technologies"
-            : "Desarrollo de aplicaciones web desde cero, con tecnologías JavasScript"}
+          {isEnglish ? "ALFONSO LOPETEGUI" : "ALFONSO LOPETEGUI"}
         </h1>
+        <div className={styles["icon-container"]}>
+          <FontAwesomeIcon icon={faJs} className={styles["icono"]} />
+          <FontAwesomeIcon icon={faReact} className={styles["icono"]} />
+          <FontAwesomeIcon icon={faNodeJs} className={styles["icono"]} />
+          <Image
+            className={styles["icono"]}
+            style={{ filter: "brightness(0) invert(1)" }}
+            src={"/nextjs-icon-svgrepo-com.svg"}
+            width={25}
+            height={25}
+            alt="next-logo"
+          />
+        </div>
         <button onClick={handleDownloadClick} className={montserrat.className}>
-          {isEnglish ? 'download CV' : 'descargar CV'}
-          
+          {isEnglish ? "download CV" : "descargar CV"}
         </button>
       </div>
     </div>

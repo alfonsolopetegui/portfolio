@@ -1,105 +1,3 @@
-/* .nav-container {
-    position: absolute;
-    top: 30%;
-    right: -300px;
-    transition: all ease 0.8s;
-    z-index: 5;
-}
-
-.nav-container nav{
-    width: 350px;
-    display: flex;
-    flex-direction: column;
-    height: fit-content;
-    align-items: flex-start;
-    justify-content: space-around;
-    padding: 20px 0 20px 0;
-    background-color: #E15634;
-    border-radius: 15px 0 0 15px;
-   
-    box-shadow: 0 0 3px 6px rgba(43, 40, 40, 0.123);
-    z-index: 5;
-}
-
-.nav-container nav a{
-    padding: 20px 0 20px 50px;
-    display: flex;
-    align-items: center;
-    width: 100%;
-
-    font-size: 20px;
-    color: whitesmoke;
-    transition: all ease 0.3s;
-    position: relative;
-}
-
-.nav-container nav a:hover {
-    background-color: aliceblue;
-    color: #002642;
-}
-
-.active {
-    right: 0;
-}
-
-.icon-container {
-    z-index: 1;
-    width: 50px;
-    height: 100%;
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all ease 0.3s;
-}
-
-.icono-left {
-    color: #454B66;
-    font-size: 55px;
-    cursor: pointer;
-    transition: all ease 0.4s;
-}
-
-.icono-left:hover {
-    color: whitesmoke;
-}
-
-.visible {
-    display: none;
-}
-
-.icono-right {
-    color: #454B66;
-    font-size: 55px;
-    cursor: pointer;
-    transition: color ease 0.4s;
-    position: absolute;
-    top: 120px;
-    right: 30px;
-    z-index: 3;
- 
-}
-
-.icono-right:hover {
-    color: whitesmoke;
-}
-
-@media (max-width: 1150px) {
-    .nav-container {
-        top: 47%;
-    }
-}
-
-@media (max-width: 850px) {
-.nav-container {
-    top: 46%;
-}
-  }
-
-@media (max-width: 560px) {
-
-} */
-
 .nav-container {
   position: absolute;
   top: 0;
@@ -126,13 +24,13 @@
 }
 
 .nav-container nav a {
-  color: rgb(146, 143, 143);
+  color: #476868;
   transition: all 0.3s ease;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .nav-container nav a:hover {
-  color: #24d4d0;
+  color: var(--home-btn-color);
 }
 
 .logo-container {
@@ -147,9 +45,6 @@
   animation: moveText 5s linear infinite; /* Agregamos una animación llamada moveText */
 }
 
-.logo:hover {
-  color: #24d4d0;
-}
 
 .language-btn-container {
   display: flex;

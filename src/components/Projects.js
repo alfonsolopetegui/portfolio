@@ -5,6 +5,8 @@ import { Montserrat } from "next/font/google";
 import { useContext, useEffect, useRef, useState } from "react";
 import LanguageContext from "@/context/languajeContext";
 
+import Image from "next/image";
+
 //Font Awesome
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -132,7 +134,7 @@ export const Projects = () => {
                   onClick={() => handleProject(project)}
                 >
                   <div className={styles["project-img-container"]}>
-                    <img src={project.images[0]} />
+                    <Image src={project.images[0]} quality={80} width={450} height={225}/>
                   </div>
 
                   <div className={styles["project-text-container"]}>
@@ -148,7 +150,7 @@ export const Projects = () => {
       ) : (
         <div className={styles["view-container"]}>
           <div className={styles["image-container"]}>
-            <img src={selectedProject.images[selectedImage]} />
+            <Image src={selectedProject.images[selectedImage]} priority={false} quality={80} width={800} height={500}/>
             <FontAwesomeIcon
               onClick={handleImageDown}
               icon={faChevronLeft}
@@ -162,7 +164,11 @@ export const Projects = () => {
           </div>
           <div className={styles["text-container"]}>
             <h4>{selectedProject.name}</h4>
-            <p>{isEnglish ? selectedProject.description : selectedProject.descriptionSpa}</p>
+            <p>
+              {isEnglish
+                ? selectedProject.description
+                : selectedProject.descriptionSpa}
+            </p>
             {console.log(selectedProject)}
             {selectedProject.page && (
               <p onClick={handleVisit} className={styles["page-link"]}>
@@ -170,7 +176,9 @@ export const Projects = () => {
               </p>
             )}
             {selectedProject.user && <p>{selectedProject.user}</p>}
-            <button onClick={handleGoBack}>{isEnglish ? 'Close' : 'Cerrar'}</button>
+            <button onClick={handleGoBack}>
+              {isEnglish ? "Close" : "Cerrar"}
+            </button>
           </div>
         </div>
       )}

@@ -22,6 +22,6 @@
 }
 
 .scroll-btn-container:hover {
-  background-color: #037f71;
-  box-shadow: 0 0 10px 2px #02a390;
+  background-color: var(--main-color);
+  /* box-shadow: 0 0 10px 2px #02a390; */
 }

@@ -82,20 +82,20 @@ export const Nav = () => {
         {navVisible && (
           <nav>
             <div onClick={handleClose} className={styles["nav-link"]}>
-              <Link href={"#banner"} style={{ color: "#24d4d0" }}>
-                HOME
+              <Link href={"#banner"} style={{ color: "var(--home-btn-color)", fontWeight: "bold" }}>
+                Home
               </Link>
             </div>
             <div onClick={handleClose} className={styles["nav-link"]}>
-              <Link href={"#about"}>{isEnglish ? "ABOUT" : "SOBRE MI"}</Link>
+              <Link href={"#about"}>{isEnglish ? "About" : "Sobre mi"}</Link>
             </div>
             <div onClick={handleClose} className={styles["nav-link"]}>
               <Link href={"#projects"}>
-                {isEnglish ? "PROJECTS" : "PROYECTOS"}
+                {isEnglish ? "Projects" : "Proyectos"}
               </Link>
             </div>
             <div onClick={handleClose} className={styles["nav-link"]}>
-              <Link href={"#contact"}>{isEnglish ? 'CONTACT' : 'CONTACTO'}</Link>
+              <Link href={"#contact"}>{isEnglish ? 'Contact' : 'Contacto'}</Link>
             </div>
           </nav>
         )}

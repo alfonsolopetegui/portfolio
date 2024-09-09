@@ -15,7 +15,12 @@ import {
   faNodeJs,
   faCss3Alt,
   faGit,
+  faJava
 } from "@fortawesome/free-brands-svg-icons";
+
+import {
+  faCircle
+} from "@fortawesome/free-solid-svg-icons";
 
 const montserrat = Montserrat({ subsets: ["latin"], weight: "400" });
 const inter = Inter({ subsets: ["latin"], weight: "700" });
@@ -66,41 +71,53 @@ export const About = () => {
   return (
     <div className={styles["about-container"]} id="about">
       <h1 className={`${styles["about-title"]} ${montserrat.className}`}>
-        {isEnglish ? "About me..." : "Sobre mi..."}
+        {isEnglish ? "About me" : "Sobre mi"}
       </h1>
       <section className={styles["about-resume"]}>
         <article ref={hiThereRef} className={styles["hi-there"]}>
           <h3 className={montserrat.className}>
             {isEnglish ? "Hi there!" : "Hola!"}{" "}
           </h3>
-          <p className={montserrat.className}>
-            {isEnglish
-              ? `I am a Front-End Developer with approximately one year of experience
-            in React and Next js. I have undergone a comprehensive course
-            covering back-end fundamentals, including Express js and MongoDB,
-            thereby completing proficiency in the MERN stack. I have found the
-            coding world to be incredibly exciting, and I am always eager to
-            learn new technologies. Currently, I am studying SQL and TypeScript,
-            strengthening my foundation in Node.js and Express, and exploring
-            various UI libraries. I am looking forward to taking on new
-            challenges and opportunities.`
-              : "Soy un desarrollador Front-End con aproximadamente un año de experiencia en React y Next.js. He realizado un curso exhaustivo que cubre los fundamentos del back-end, incluyendo Express.js y MongoDB, completando así mi competencia en el stack MERN. He encontrado el mundo de la programación increíblemente emocionante, y siempre estoy ansioso por aprender nuevas tecnologías. Actualmente, estoy estudiando SQL y TypeScript, fortaleciendo mis bases en Node.js y Express, y explorando diversas bibliotecas de interfaz de usuario. Estoy ansioso por asumir nuevos desafíos y oportunidades."}
-          </p>
+          <section className={montserrat.className}>
+            <p className={styles["icon-paragraph"]}>
+              <FontAwesomeIcon icon={faCircle} width={10} className={styles["list-icon"]}/>
+              {isEnglish
+                ? "I´m a web developer with two yers of experience."
+                : "Soy un desarrollador web con 2 años de experiencia programando."}
+            </p>
+            <p className={styles["icon-paragraph"]}>
+              <FontAwesomeIcon icon={faCircle} width={10} className={styles["list-icon"]}/>
+              {isEnglish
+                ? "I have strong proficiency with frontend tools, primarily Next.js, focusing on optimization and user experience."
+                : "Tengo buen manejo de herramientas frontend, principalmente NextJs, apuntando a la optimización y la experiencia de usuario."}
+            </p>
+            <p className={styles["icon-paragraph"]}>
+              <FontAwesomeIcon icon={faCircle} width={10} className={styles["list-icon"]}/>
+              {isEnglish
+                ? "I use Java and the Spring ecosystem to create robust, secure REST APIs that provide useful responses to users."
+                : "Utilizo java y el ecosistema Spring para crear APIs rest robustas, seguras y que den respuestas útiles a los usuarios."}
+            </p>
+            <p className={styles["icon-paragraph"]}>
+              <FontAwesomeIcon icon={faCircle} width={10} className={styles["list-icon"]}/>
+              {isEnglish
+                ? "I am currently continuing my education in AWS, Docker, and Kubernetes."
+                : "Actualmente continúo formandome, en AWS, Docker y Kubernetes."}
+            </p>
+          </section>
         </article>
 
         <article ref={fullstackRef} className={styles["fullstack"]}>
-          <h3 className={montserrat.className}>{isEnglish ? 'Full stack development': 'Desarrollo Full stack'}</h3>
+          <h3 className={montserrat.className}>
+            {isEnglish ? "Full stack development" : "Desarrollo Full stack"}
+          </h3>
           <section className={styles["icons"]}>
-            <div className={styles["basic-icons"]}>
+            
               <FontAwesomeIcon icon={faHtml5} className={styles["icono"]} />
               <FontAwesomeIcon icon={faCss3Alt} className={styles["icono"]} />
               <FontAwesomeIcon icon={faJs} className={styles["icono"]} />
-            </div>
-            <div className={styles["advanced-icons"]}>
               <FontAwesomeIcon icon={faReact} className={styles["icono"]} />
               <FontAwesomeIcon icon={faNodeJs} className={styles["icono"]} />
-            </div>
-            <div className={styles["advanced-icons"]}>
+              <FontAwesomeIcon icon={faJava} className={styles["icono"]} />
               <FontAwesomeIcon icon={faGit} className={styles["icono"]} />
               <Image
                 className={styles["icono"]}
@@ -110,7 +127,16 @@ export const About = () => {
                 height={90}
                 alt="next-logo"
               />
-            </div>
+
+              <Image
+                className={styles["icono"]}
+                style={{ filter: "brightness(0) invert(1)" }}
+                src={"/Spring_Boot.svg"}
+                width={90}
+                height={90}
+                alt="next-logo"
+              />
+           
           </section>
         </article>
       </section>

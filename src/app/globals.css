@@ -4,10 +4,16 @@
   margin: 0;
   scroll-behavior: smooth;
 }
+:root {
+  /* --main-color: #164421; */
+  --main-color: #156a8481;
+  --main-color-hover: #012A36;
+  --home-btn-color: #5497A7;
 
+}
 
 body {
-  background-color: #041F1E;
+  background-image: url(../../public/background.jpg);
   overflow-x: hidden;
 }
 

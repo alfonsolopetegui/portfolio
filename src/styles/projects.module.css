@@ -9,7 +9,8 @@
 }
 
 .projects-title {
-  width: 500px;
+  position: relative;
+  /* width: 500px; */
 
   text-align: center;
   padding: 5px 0;
@@ -18,6 +19,18 @@
   border-radius: 10px;
   
   font-size: 70px;
+}
+
+.projects-title::after {
+  content: "";
+  display: block;
+  width: 90%; /* O el ancho que prefieras para la línea */
+  height: 5px; /* Altura de la línea */
+  background-color: var(--main-color); /* Color de la línea */
+  position: absolute;
+  bottom: -5px; /* Ajusta esto para colocar la línea en la posición deseada */
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .project-container {
@@ -157,15 +170,15 @@
   cursor: pointer;
   transition: all ease 0.3s;
   color: whitesmoke;
-  background-color: #078d7d6b;
-  box-shadow: 0 0 5px 2px #0aa997;
+  background-color: var(--main-color);
+  /* box-shadow: 0 0 5px 2px #0aa997; */
   border-radius: 20px;
   border: none;
 }
 
 .text-container button:hover {
-  background-color: #0aa997;
-  color: whitesmoke;
+  background-color: var(--main-color-hover);
+  /* color: whitesmoke; */
 }
 
 .text-container p {

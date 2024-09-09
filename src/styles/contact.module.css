@@ -31,15 +31,28 @@
 }
 
 .contact-title {
+  position: relative;
   width: 300px;
   font-size: 70px;
   /* background: #086788; */
   text-align: center;
   padding: 5px 0;
   color: whitesmoke;
-  /* margin-bottom: 100px; */
+  margin-bottom: 20px;
   border-radius: 10px;
   /* box-shadow: 2px 2px 3px 4px rgba(0, 0, 0, 0.094); */
+}
+
+.contact-title::after {
+  content: "";
+  display: block;
+  width: 90%; /* O el ancho que prefieras para la línea */
+  height: 5px; /* Altura de la línea */
+  background-color: var(--main-color); /* Color de la línea */
+  position: absolute;
+  bottom: -5px; /* Ajusta esto para colocar la línea en la posición deseada */
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .form-inputs {
@@ -69,7 +82,7 @@
 
 .form-field input:focus {
   /* outline: solid 4px #e15634; */
-  box-shadow: 0 0 5px 2px #24d4d0;
+  box-shadow: 0 0 5px 2px var(--main-color);
 }
 
 .form-field input::placeholder {
@@ -107,7 +120,7 @@
 
 .textarea-container textarea:focus {
   /* outline: solid 4px #e15634; */
-  box-shadow: 0 0 5px 2px #24d4d0;
+  box-shadow: 0 0 5px 2px var(--main-color);
 
 }
 
@@ -115,12 +128,12 @@
   width: 300px;
   padding: 20px;
   border-radius: 30px;
-  background-color: #014e455b;
+  background-color: var(--main-color);
   color: rgb(207, 207, 207);
   font-size: 16px;
   font-weight: 600;
   border: none;
-  box-shadow: 0 0 6px .5px #24d4d0;
+  /* box-shadow: 0 0 6px .5px #24d4d0; */
   cursor: pointer;
   transition: all ease 0.3s;
   display: flex;
@@ -130,8 +143,8 @@
 }
 
 .contact-form button:hover {
-  box-shadow: 0 0 8px 2px #24d4d0;
-  background-color: #137d7b;
+  /* box-shadow: 0 0 8px 2px #24d4d0; */
+  background-color: var(--main-color-hover);
 }
 
 /* .contacts {

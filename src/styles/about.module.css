@@ -20,27 +20,33 @@
 }
 
 .about-title {
-  /* width: 300px; */
-  /* background-color: #002642; */
-  /* background: #086788; */
-  /* font-family: 'Montserrat'; */
+  position: relative;
   font-size: 70px;
   font-weight: 100;
   text-align: center;
   padding: 5px 0;
   color: whitesmoke;
   margin-bottom: 60px;
-  /* border-radius: 10px; */
-  /* box-shadow: 2px 2px 3px 4px rgba(0, 0, 0, 0.094); */
-  /* margin-top: 25px; */
+}
+
+.about-title::after {
+  content: "";
+  display: block;
+  width: 90%; /* O el ancho que prefieras para la línea */
+  height: 5px; /* Altura de la línea */
+  background-color: var(--main-color); /* Color de la línea */
+  position: absolute;
+  bottom: -5px; /* Ajusta esto para colocar la línea en la posición deseada */
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .about-resume article {
   width: 500px;
   min-height: 500px;
-  border: solid 1px #095453;
+  /* border: solid 1px #095453; */
   /* border: solid 1px grey; */
-  background-color: #071718;
+  /* background-color: #071718; */
   border-radius: 15px;
   box-shadow: 2px 2px 3px 4px rgba(0, 0, 0, 0.094);
 }
@@ -55,12 +61,17 @@
 }
 
 .hi-there p {
-  text-align: justify;
+  text-align: left;
+  hyphens: auto;
   padding: 0 30px;
-  /* margin-bottom: 30px; */
+  text-indent: 20px;
   font-size: 20px;
   color: rgba(245, 245, 245, 0.815);
-  
+  margin-bottom: 10px;
+}
+
+.list-icon {
+  padding-right: 10px;
 }
 
 .hi-there {
@@ -130,9 +141,9 @@
 }
 
 .icons {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 30px;
 }
 
 .basic-icons {
@@ -149,7 +160,7 @@
   display: flex;
   justify-content: space-around;
   /* width: 250px; */
-  gap: 40px;
+  gap: 30px;
   margin-bottom: 30px;
 }
 
@@ -157,9 +168,6 @@
   .about-resume {
     gap: 40px;
   }
-
-
-
 }
 
 @media (max-width: 550px) {

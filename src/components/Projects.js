@@ -150,7 +150,7 @@ export const Projects = () => {
       ) : (
         <div className={styles["view-container"]}>
           <div className={styles["image-container"]}>
-            <Image src={selectedProject.images[selectedImage]} priority={false} quality={80} width={800} height={500}/>
+            <Image src={selectedProject.images[selectedImage]} priority={false} quality={80} fill/>
             <FontAwesomeIcon
               onClick={handleImageDown}
               icon={faChevronLeft}

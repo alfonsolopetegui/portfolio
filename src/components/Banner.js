@@ -23,18 +23,13 @@ export const Banner = () => {
   const { isEnglish } = useContext(LanguageContext);
 
   const handleDownloadClick = () => {
-    const pdfURL =
-      "https://firebasestorage.googleapis.com/v0/b/portfolio-621b9.appspot.com/o/resumefullstack.pdf?alt=media&token=46d4661f-a0f0-4f45-8909-3a292d44b946";
+    const pdfURL = isEnglish
+      ? "https://firebasestorage.googleapis.com/v0/b/portfolio-621b9.appspot.com/o/FullstackresumeENG.pdf?alt=media&token=fdf1e11a-99cd-4881-999b-2c1ea6c4d4cf"
+      : "https://firebasestorage.googleapis.com/v0/b/portfolio-621b9.appspot.com/o/resumefullstack.pdf?alt=media&token=46d4661f-a0f0-4f45-8909-3a292d44b946";
 
     window.open(pdfURL, "_blank");
   };
 
-  const handleDownloadClickEng = () => {
-    const pdfURL =
-      "https://firebasestorage.googleapis.com/v0/b/portfolio-621b9.appspot.com/o/resumefullstack.pdf?alt=media&token=46d4661f-a0f0-4f45-8909-3a292d44b946";
-
-    window.open(pdfURL, "_blank");
-  };
 
   return (
     <div className={`${styles["banner-container"]} ${montserrat.className}`}>
@@ -75,7 +70,12 @@ export const Banner = () => {
         </div>
 
         <div className={styles["image-container"]}>
-          <Image src="https://firebasestorage.googleapis.com/v0/b/portfolio-621b9.appspot.com/o/fotoCara.png?alt=media&token=6c10e93c-c1ef-45ce-9d2b-d404a7cc981f" width={350} height={350} quality={100}/>
+          <Image
+            src="https://firebasestorage.googleapis.com/v0/b/portfolio-621b9.appspot.com/o/fotoCara.png?alt=media&token=6c10e93c-c1ef-45ce-9d2b-d404a7cc981f"
+            width={350}
+            height={350}
+            quality={100}
+          />
         </div>
       </div>
       <div className={styles["btn-container"]}>

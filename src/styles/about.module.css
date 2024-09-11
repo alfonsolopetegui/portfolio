@@ -178,6 +178,10 @@
     padding: 0 5px;
   }
 
+  .icono {
+    width: 70px;
+  }
+
   .about-resume article {
     width: 95%;
     min-height: fit-content;

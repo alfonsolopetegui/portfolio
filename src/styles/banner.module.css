@@ -1,12 +1,16 @@
 .banner-container {
-  height: 95%;
+  height: 100%;
   display: flex;
+  flex-direction: column;
   overflow-x: hidden;
-  position: relative;
+  /* position: relative; */
+  justify-content: space-around;
 }
 
 .home-container {
   width: 100%;
+  height: 85%;
+  padding-top: 100px;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -25,8 +29,6 @@
   width: 350px;
   height: 350px;
   object-fit: cover;
-  transition: transform 10s ease, box-shadow 0.3s ease;
-  cursor: pointer;
 }
 
 .title {
@@ -62,8 +64,16 @@
   padding: 15px 30px;
   width: fit-content;
 }
+
+.btn-container {
+  height: 20%;
+  display: flex;
+  justify-content: center;
+}
+
 .btn-container button {
   width: 300px;
+  height: fit-content;
   padding: 20px;
   border-radius: 30px;
   background-color: var(--main-color);
@@ -75,10 +85,10 @@
   cursor: pointer;
   transition: all ease 0.3s;
   margin-top: 20px;
-  position: absolute;
+  /* position: absolute;
   top: 85%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); */
 }
 
 .btn-container button:hover {
@@ -87,59 +97,77 @@
 }
 
 @media (max-width: 1100px) {
-  .image-container img {
+  /* .image-container img {
     width: 200px;
     height: 200px;
-  }
+  } */
 }
 
 @media (max-width: 900px) {
 
   .image-container img {
-    width: 150px;
-    height: 150px;
+    width: 280px;
+    height: 280px;
   }
 }
 
 @media (max-width: 550px) {
 
   .banner-container {
+    height: 100%;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
   }
 
   .home-container {
-    height: 70%;
+    padding-top: 0;
+    height: 100%;
     width: 100%;
     flex-direction: column-reverse;
-    justify-content: space-around;
+    justify-content: center;
+  }
+
+  .image-container {
+    width: 100%;
+    height: 50%;
+    padding-top: 120px;
+  }
+
+  .image-container img {
+    width: 280px;
+    height: 280px;
   }
 
   .title {
     width: 100%;
     height: 50%;
-    /* padding-left: 20px; */
     max-width: 600px;
-    /* margin-top: 50px; */
+  }
+
+  .title h5 {
+    font-size: 12px;
   }
 
   .title h1 {
-    font-size: 40px;
+    font-size: 27px;
+    font-weight: 300;
   }
 
-  .title button {
-    top: 53%;
-    width: 200px;
+  .icon-container {
+    border: 1px solid rgba(245, 245, 245, 0.667);
+    border-radius: 30px;
+    padding: 5px 15px;
   }
-  .image-container {
-    width: 100%;
-    /* background-color: rgba(0, 0, 0, 0.233); */
-    /* height: 35%; */
+
+  .icono {
+    width: 15px;
   }
-  .image-container img {
-    width: 400px;
-    border-radius: 50%;
-    /* box-shadow: 0 0 5px 2px rgba(255, 255, 255, 0.361); */
-    height: auto;
+
+  .btn-container button {
+    width: 60%;
   }
+
+ 
+
+  
 }

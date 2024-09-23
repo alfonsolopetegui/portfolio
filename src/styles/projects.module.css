@@ -111,12 +111,13 @@
   display: flex;
   justify-content: center;
   position: relative;
+  object-fit: cover;
 }
 
 .image-container img {
   width: 100%;
-  object-fit: cover;
-  
+  object-fit:scale-down;
+  border-radius: 10px;
   /* height: 55vh; */
   box-shadow: 0 0 15px 5px rgba(150, 144, 144, 0.66);
 }

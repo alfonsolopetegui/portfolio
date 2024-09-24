@@ -82,7 +82,7 @@ export const About = () => {
             <p className={styles["icon-paragraph"]}>
               <FontAwesomeIcon icon={faCircle} width={10} className={styles["list-icon"]}/>
               {isEnglish
-                ? "I´m a web developer with two yers of experience."
+                ? "I´m a web developer with two years of experience."
                 : "Soy un desarrollador web con 2 años de experiencia programando."}
             </p>
             <p className={styles["icon-paragraph"]}>
